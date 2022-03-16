@@ -9,7 +9,8 @@ public class Magacin implements MagacinInterfejs{
 
 	@Override
 	public void dodajArtikal(Artikal a) {
-		listaArtikala.addLast(a);
+		if (a != null)
+			listaArtikala.add(a);
 	}
 
 	@Override

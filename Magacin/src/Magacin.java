@@ -1,23 +1,27 @@
+import java.util.LinkedList;
+
 import artikal.Artikal;
 import specifikacijainterfejsa.MagacinInterfejs;
 
 public class Magacin implements MagacinInterfejs{
+	
+	LinkedList<Artikal> listaArtikala = new LinkedList<>();
 
 	@Override
 	public void dodajArtikal(Artikal a) {
-		// TODO Auto-generated method stub
-		
+		listaArtikala.addLast(a);
 	}
 
 	@Override
 	public void izbacArtkal(Artikal a) {
-		// TODO Auto-generated method stub
-		
+		listaArtikala.remove(a);
 	}
 
 	@Override
 	public Artikal nadjiArtikal(int sifra) {
-		// TODO Auto-generated method stub
+		for (Artikal a : listaArtikala)
+			if (a.getSifra() == sifra)
+				return a;
 		return null;
 	}
 }
